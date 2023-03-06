@@ -7,13 +7,21 @@ p game.player1.name
 p game.player2.number_of_lifes
 game.check_players
 
-game.asking_math_question
-game.asking_math_question
-game.asking_math_question
-game.asking_math_question
-game.asking_math_question
-game.asking_math_question
-game.asking_math_question
+# game.asking_math_question
+# game.change_ask_turn
+# game.asking_math_question
+# game.change_ask_turn
+
+# game.asking_math_question
+# game.change_ask_turn
+
+# game.asking_math_question
+# game.change_ask_turn
+
+# game.asking_math_question
+# game.asking_math_question
+# game.asking_math_question
+game.start
 # p3 = Player.new("Player3")
 
 # p1.asking_math_question
