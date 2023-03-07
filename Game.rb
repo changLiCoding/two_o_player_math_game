@@ -10,6 +10,23 @@ class Game
 
   end
 
+
+  def start
+    while @player1.number_of_lifes != 0 && @player2.number_of_lifes != 0
+      asking_math_question()
+      change_ask_turn()
+    end
+    if @player1.number_of_lifes == 0
+      puts "#{@player2.name} wins with a score of #{@player2.number_of_lifes}/3"
+    else
+      puts "#{@player1.name} wins with a score of #{@player1.number_of_lifes}/3"
+    end
+
+    puts "----- GAME OVER -----"
+    puts "Good bye!"
+  end
+
+  private
   def check_players
     p @player1
     p @player2
@@ -22,8 +39,13 @@ class Game
 
   def asking_math_question
     random_numbers = random_numbers_generate()
+    if @ask_turn == 1
+      asking_player = @player1
+    else
+      asking_player = @player2
+    end
     question_answer = random_numbers[0] + random_numbers[1]
-    puts "What does #{random_numbers[0]} plus #{random_numbers[1]} equal? "
+    puts "#{asking_player.name}: What does #{random_numbers[0]} plus #{random_numbers[1]} equal? "
 
     answer_from_input = gets.chomp.to_i
     if answer_from_input != question_answer
@@ -57,20 +79,6 @@ class Game
 
   end
 
-  def start
-    while @player1.number_of_lifes != 0 && @player2.number_of_lifes != 0
-      asking_math_question()
-      change_ask_turn()
-    end
-    if @player1.number_of_lifes == 0
-      puts "#{@player2.name} wins with a score of #{@player2.number_of_lifes}/3"
-    else
-      puts "#{@player1.name} wins with a score of #{@player1.number_of_lifes}/3"
-    end
-
-    puts "----- GAME OVER -----"
-    puts "Good bye!"
-  end
 
 
 end
